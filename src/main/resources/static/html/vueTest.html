@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    {{ message }}
+</div>
+<script>
+<!--    基本使用-->
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello word!'
+        }
+    })
+</script>
+
+
+<div id="app-2">
+  <span v-bind:title="message">
+    鼠标悬停几秒钟查看此处动态绑定的提示信息！
+  </span>
+</div>
+<script>
+    var app2 = new Vue({
+        el: '#app-2',
+        data: {
+            message: '页面加载于 ' + new Date().toLocaleString()
+        }
+    })
+</script>
+
+<div id="app-4">
+    <ol>
+        <li v-for="todo in todos">
+            {{ todo.text }}
+        </li>
+    </ol>
+</div>
+<script>
+
+       var app4 = new Vue({
+el: '#app-4',
+data: {
+todos: [
+{ text: '学习 JavaScript' },
+{ text: '学习 Vue' },
+{ text: '整个牛项目' }
+]
+}
+})
+
+</script>
+
+
+
+</body>
+</html>

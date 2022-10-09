@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../js/vue.js"></script>
+    <style>
+        body{
+            padding-top:10%;
+            padding-left:38%;
+            width:350px;
+        }
+        a{
+            text-decoration:none;
+        }
+
+        #loginMethod{
+        }
+
+        .user{
+
+            width:100%;
+        }
+
+
+        #phone_login{
+
+            font-size:20px;
+
+            padding-top:25px;
+            padding-bottom:25px;
+            padding-right:10px;
+            padding-left:15px;
+
+            text-align:center;
+            color:red;
+            display:inline;
+
+       }
+
+       #email_login{
+
+            font-size:20px;
+            padding-top:25px;
+            padding-bottom:25px;
+            padding-right:15px;
+            padding-left:10px;
+            text-align:center;
+           color:grey;
+           display:inline;
+       }
+
+       #note_login{
+            padding-top:5px;
+            font-size:13px;
+            text-align:right;
+            padding-bottom:15px;
+       }
+
+        #note_login img{
+            margin:-5px;
+       }
+
+       #mainstay{
+            padding-top:10px;
+           padding-bottom:25px;
+       }
+
+       #signin{
+            padding-bottom:25px;
+       }
+
+       #login_button{
+            text-align:center;
+            font-size:18px;
+            border-radius: 7px;
+            background-color:	#FF0033;
+            width:100%;
+       }
+
+       #other_method_text{
+            color:grey;
+       }
+       #registry{
+            font-size:13px;
+            float:right;
+            color:#FF0033;
+       }
+
+       #weixin_icon{
+            width:20;
+       }
+
+
+        #icon{
+            float:right;
+        }
+
+
+        #forget{
+            color:grey;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<!------选择登录方式--------->
+<div id="loginMethod" >
+    <div id="phone_login">
+        <a href="#mainstay" >手机号登录</a>
+    </div>
+    <div id="email_login">
+        <a href="#mainstay">邮箱登录</a>
+    </div>
+</div>
+<!-------登录方式选择后展示的样式-->
+<div id="mainstay">
+    <div id="note_login" v-if="seen"><label><img src="../icon/shortMsg.png" width="18">&nbsp;&nbsp;<a>使用短信验证登录</a></label></div>
+
+    <div id="phone" v-if="phone_seen">
+        <input id="count" class="user" name="username" type="text" placeholder="请输入手机号" ><br><br>
+        <input id="password" class="user" name="password" type="text" placeholder="请输入密 码">
+    </div>
+    <div id="email" v-if="email_seen">
+        <input id="emailCount" class="user" name="username" type="text" placeholder="常用邮箱"><br><br>
+        <input id="email_password" class="user" name="password" type="text" placeholder="密 码">
+    </div>
+
+    <div id="note_login_input" v-if="check_number">
+        <input name="short_msg" type="number" placeholder="请输入短信验证码" >
+    </div>
+    <button>获取验证码</button>
+
+
+
+</div>
+
+
+<div id="signin">
+    <button id="login_button">登录</button><br><br>
+    <label><input type="checkbox" name="passwordless" value="10">十天内免登录</label>&nbsp;|&nbsp;
+    <a id="forget" href="forget_password.html">忘记密码？</a>
+    <a id="registry" href="registry.html">去注册></a>
+
+</div>
+
+<div id="other_method">
+
+    <div id="other_method_text"><a>其他登录方式</a></div>
+    <div id="icon">
+        <label><a><img  src="../icon/weixin.png" width="30">微信</a></label>&nbsp;&nbsp;
+        <label><a><img id="qq_icon" src="../icon/QQ.png" width="30">qq</a></label>&nbsp;&nbsp;
+        <a><img id="git_icon" src="../icon/git.png" width="30">git</a>
+    </div>
+
+
+</div>
+
+
+
+<script>
+    var msgLogin = new Vue({
+    el: '#note_login',
+    data: {seen: true}
+    })
+</script>
+
+
+
+
+
+</script>
+
+<script>
+    var inputSeen = new Vue({
+    el: '#mainstay',
+    data: {
+        phone_seen:true,
+        email_seen:false
+    }
+    })
+</script>
+
+
+
+
+</body>
+</html>
