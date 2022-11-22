@@ -8,8 +8,8 @@ public class Preorder {
 
     //时间段，9：00-10：00
     private String timeInterval;
-    //预约编号
 
+    //预约编号
     private String orderId;
 
     //主题

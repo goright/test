@@ -9,6 +9,8 @@ public class Commodity {
 
     //预售日期
 
+    //上架时间
+
     //库存
     private int stock;
 
