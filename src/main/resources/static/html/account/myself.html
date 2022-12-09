@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人主页</title>
+    <style>
+
+
+
+        #mainInfo{
+        display:block;
+            width:40%;
+
+        }
+
+        #menu{
+
+            position:stick;
+            background-color: #99ffff;
+            width:150px;
+            height:600px;
+            float:left;
+
+            margin-right:20px;
+            margin-top:140px;
+            margin-left:300px;
+        }
+        ul {
+            display:inline-block;
+            list-style-type:none;
+        }
+        ul li{
+            padding-top:20px;
+        }
+
+        ul li a{
+            padding-top:20px;
+
+
+        }
+
+        li a:link{
+            text-decoration:none;
+        }
+
+        li a:hover{
+            text-decoration:underline;
+            color:red;
+        }
+
+        li a:active{
+            text-decoration:none;
+            color:grey;
+        }
+
+        #contont{
+
+            width:60%;
+            float:left;
+        }
+
+        #myHead{
+            height:120px;
+            background-color:#F0F0F0;
+
+        }
+
+        #profilePhoto{
+            width:100px;
+            height:120px;
+        }
+
+        #photo{
+            float:left;
+        }
+
+        #headContext{
+
+            height:100px;
+        }
+
+        #bodyContext{
+
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div id="menu">
+    <ul>
+        <li><a href="">个人资料</a></li>
+        <li><a href="">账号设置</a></li>
+        <li><a href="">隐私设置</a></li>
+        <li><a href="">信息认证</a></li>
+        <li><a href="">我的收藏</a></li>
+        <li><a href="">浏览历史</a></li>
+        <li><a href="">更多</a></li>
+    </ul>
+</div>
+
+<div id="contont">
+
+    <div id="myHead">
+        <div id="photo">
+            <img id="profilePhoto" src="./../../icon/qq.png" alt="头像">
+        </div>
+        <div id="headContext">
+            <span>{{username}}</span>
+        </div>
+    </div>
+
+    <div id="bodyContext">
+
+    </div>
+</div>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../../js/vue.js"></script>
+    <meta charset="UTF-8">
+    <title>预约概览</title>
+
+  <style>
+
+
+    #order_list_title{
+
+
+      height:40px;
+      background-color:	#66FFEE;
+
+      border-style:none;
+      border-left-width:thin;
+      border-top: double grey;
+      padding-top:5px;
+      padding-bottom:5px;
+
+
+
+    }
+
+    #order_list_title li{
+    display:inline;
+
+    float: left;
+        width: 14%;
+      font-size:20px;
+
+       text-align:left;
+
+
+    }
+
+    #order_list:after{
+         content: "";
+        display: table;
+        clear: both;
+
+    }
+
+    #todo li{
+        display:inline;
+        float: left;
+        width: 14%;
+      font-size:18px;
+
+      text-align:left;
+
+
+
+
+    }
+
+
+    #page{
+        width:40px;
+        left:600px;
+    }
+
+    #gotoPage{
+        width:40px;
+    }
+
+    #orderPaging{
+        position:relative;
+        float:right;
+        top:40px;
+        right:80px;
+        font-size:10px;
+    }
+
+
+  #order_search[type=text] {
+  width: 20%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url("./../../icon/search.png");
+  background-size:20px 20px;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+}
+    .sortIcon{
+
+        width:20px;
+        height:20px;
+    }
+
+  </style>
+</head>
+<body>
+
+<div >
+    <input id="order_search" type="text" name="search" placeholder="搜索..">
+</div>
+
+<div >
+    <ul id="order_list_title">
+        <li>序号<a href="" ><img class="sortIcon" src="./../../icon/排序无.svg"  ></a></li>  <li>预约编号</li> <li>预约主题</li>  <li>预约时间</li> <li>预约地点 </li>  <li>图片</li>   <li>操作</li>
+    </ul>
+</div>
+
+<div id="order_list">
+    <ul id="todo"  v-for="todo in todos">
+        <li> {{ todo.text }}</li>  <li>{{ todo.preorderNum}}</li> <li>{{todo.theme}} </li>  <li>预约时间</li> <li>预约地点</li>  <li>图片</li>   <li><button>详情</button>    <button>修改</button>    <button>删除</button></li>
+    </ul>
+</div>
+
+
+
+<br>
+<div id="orderPaging">
+    <input id="page" type="number" placeholder="10"  oninput="if(value>100)value=100;if(value<1)value=1"> 条/页&nbsp;&nbsp;&nbsp;&nbsp;
+    <button><</button>{{no}}<button>></button>&nbsp;&nbsp;&nbsp;&nbsp;前往<input id="gotoPage" type="number" oninput="if(value<1)value=1">页&nbsp;&nbsp;&nbsp;&nbsp;共{{total}}条
+</div>
+
+<script>
+
+       var orderlist= new Vue({
+el: '#order_list',
+data: {
+todos: [
+{ text: '学习 JavaScript',preorderNum:1,theme:1},
+{ text: '学习 Vue',preorderNum:3 ,theme:1},
+{ text: '整个牛项目',preorderNum:5 ,theme:1},
+{ text: 'abc',preorderNum:1,theme:1 }
+]
+}
+})
+
+
+
+</script>
+
+</body>
+</html>
