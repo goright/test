@@ -65,6 +65,10 @@
 
         }
 
+        #myHead:after{
+            clear:both;
+        }
+
         #profilePhoto{
             width:100px;
             height:120px;
@@ -80,6 +84,23 @@
         }
 
         #bodyContext{
+            margin-top:20px;
+            background-color:grey;
+
+        }
+
+        ul li div{
+            float:left;
+            padding-right:100px;
+        }
+
+
+        .info-head{
+            background-color:#F8F8F8;
+            padding-left:-600px;
+            font-size:24px;
+            border-style:none none solid none;
+            outline-color:grey;
 
         }
 
@@ -112,10 +133,15 @@
     </div>
 
     <div id="bodyContext">
+        <div class="info-head">基本信息</div>
+        <ul>
+            <li><div class="div-colum-1">用户昵称</div><div class="div-colum-2">未填写</div><div class="div-colum-3"><button>编辑</button></div></li>
+        </ul>
+
+
 
     </div>
 </div>
-
 
 
 
